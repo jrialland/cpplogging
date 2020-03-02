@@ -50,9 +50,7 @@ private:
 	ostream& ss;
 	
 	vector<pair<string, bool>> tags;
-	
-	bool closedtag;
-	
+		
 	static string encode(const string& data) {
 		std::string buffer;
 		buffer.reserve(data.size());
