@@ -4,4 +4,7 @@ compiler:
   - clang
   - gcc
 
+install:
+    - apt-get install -y libboost-regex-dev
+
 script: make -B && ./testlog
