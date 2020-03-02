@@ -30,4 +30,4 @@ int main(int argc, char **argv) {
 }
 ```
 
-[![Logbert screenshot](https://i.imgur.com/RWjPk4g.gif)
+[![Logbert screenshot](https://i.imgur.com/RWjPk4g.gif)]
