@@ -29,3 +29,5 @@ int main(int argc, char **argv) {
 	return 0;
 }
 ```
+
+[![Logbert screenshot](https://i.imgur.com/RWjPk4g.gif)
