@@ -1,0 +1,4 @@
+*.a
+build/
+log/
+a.out

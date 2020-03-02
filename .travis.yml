@@ -1,0 +1,13 @@
+
+compiler:
+  - clang
+  - gcc
+
+jobs:
+  include:
+    - stage: "Build"
+      name: "Build"
+      script: ./testlog
+    - stage: "make"
+      name: "Unit Tests"
+      script: ./testlog
