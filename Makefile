@@ -1,4 +1,4 @@
-CXXFLAGS=-std=c++17 -ggdb -Wall -Wextra -Wfatal-errors -export-dynamic
+CXXFLAGS=-std=c++17 -g -Wall -Wextra -Wfatal-errors -rdynamic
 LDFLAGS=-lboost_regex -ldl
 
 SRC_DIR = src
@@ -7,6 +7,7 @@ BUILD_DIR = build
 CXX_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 CXX_OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o, $(CXX_SOURCES))
 
+.PHONY:all
 all: testlog
 
 testlog: testlog.cpp liblogging.a
