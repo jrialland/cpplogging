@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <thread>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ namespace logging {
 	  string fnct;
 	  string file;
 	  int line;
+	  std::thread::id thread_id;
 	  vector<string> stackTrace;
 	  LogMessage(const LogLevel &level);
 	};

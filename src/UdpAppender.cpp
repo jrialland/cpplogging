@@ -113,6 +113,12 @@ static string str_toupper(const std::string &s) {
     return u;
 }
 
+static string threadIdToStr(std::thread::id tid) {
+	ostringstream ss;
+	ss << "0x" << std::hex << tid;
+	return ss.str();
+}
+
 namespace logging {
 	
 	UdpAppender::UdpAppender(const string& host, int port) : host_(host), port_(port) {
@@ -131,7 +137,7 @@ namespace logging {
 		xml.addAttr("logger", logger.name());
 		xml.addAttr("level", str_toupper(m.level.name()));
 		xml.addAttr("timestamp", std::to_string(m.tstamp));
-		xml.addAttr("thread", "n/a");
+		xml.addAttr("thread", threadIdToStr(m.thread_id));
 		
 			xml.startTag("log4j:message");
 			xml.addCData(m.message);
