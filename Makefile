@@ -1,5 +1,5 @@
-CXXFLAGS=-std=c++17 -g -Wall -Wextra -Wfatal-errors -rdynamic
-LDFLAGS=-lboost_regex -ldl
+CXXFLAGS=-std=c++17 -g -Wall -Wextra -Wfatal-errors
+LDFLAGS=-rdynamic -lboost_regex -ldl
 
 SRC_DIR = src
 BUILD_DIR = build
