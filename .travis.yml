@@ -4,11 +4,4 @@ compiler:
   - clang
   - gcc
 
-jobs:
-  include:
-    - stage: "Build"
-      name: "Build"
-      script: make -B
-    - stage: "make"
-      name: "Unit Tests"
-      script: ./testlog
+script: make -B && ./testlog
