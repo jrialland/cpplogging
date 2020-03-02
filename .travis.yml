@@ -1,3 +1,4 @@
+language: cpp
 
 compiler:
   - clang
@@ -7,7 +8,7 @@ jobs:
   include:
     - stage: "Build"
       name: "Build"
-      script: ./testlog
+      script: make -B
     - stage: "make"
       name: "Unit Tests"
       script: ./testlog
