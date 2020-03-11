@@ -5,6 +5,8 @@ compiler:
   - gcc
 
 install:
-    - sudo apt-get -y install libboost-regex-dev
+    - sudo apt-get -y install ninja-build libboost-regex-dev
 
-script: make -B && ./testlog
+script:
+    - mkdir build 
+    - cd build && cmake .. -GNinja && ninja && ./unittests
