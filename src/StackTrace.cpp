@@ -32,7 +32,7 @@ vector<string> getStackTrace(int maxSize) {
 		char **symbols = backtrace_symbols (buffer, items);
 		for(int i=0; i< items; i++) {
 			Dl_info info;
-			if(dladdr(buffer[i], &info)) {
+			if(dladdr(buffer[i], &info) && info.dli_sname != nullptr) {
 				vec.push_back(demangle(info.dli_sname));
 			} else {
 				vec.push_back(symbols[i]);
