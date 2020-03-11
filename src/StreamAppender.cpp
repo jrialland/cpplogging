@@ -96,14 +96,17 @@ namespace logging {
 	#else
 		string nl = "\n";
 	#endif
-		
-		string sanitizedmsg = boost::regex_replace(message.message, boost::regex("\r?\n"), "\n\t\t\t\t\t");
+		string repl = tty_ ? (nl + "\t" + ansiseq::gray + "|\t" + ansiseq::white) : (nl + "\t|\t");
+		string sanitizedmsg = boost::regex_replace(message.message, boost::regex("\r?\n"), repl);
 		
 		if(tty_) {
 			*(stream_) << ansiseq::white;
 		}
-		
-		*(stream_) << "\t" << sanitizedmsg << nl;
+		if(sanitizedmsg.compare(message.message)) {
+			*(stream_) << repl << sanitizedmsg << nl;
+		} else {
+			*(stream_) << "\t" << sanitizedmsg << nl;
+		}
 		
 		if(tty_) {
 			*(stream_) << ansiseq::reset;
