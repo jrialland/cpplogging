@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 	
 	LOG_INFO("works with printable objs : ", printable); 
 	
-	LOG_DEBUG("Multiple\nlines\n\are displayed\ndifferently");
+	LOG_DEBUG("Multiple\nlines\nare displayed\ndifferently");
 
 	return 0;
 }
